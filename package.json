@@ -1,0 +1,22 @@
+{
+  "name": "orangehrm-automation-by-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faisalkabir1/OrangeHrm-Automation-by-Playwright.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faisalkabir1/OrangeHrm-Automation-by-Playwright/issues"
+  },
+  "homepage": "https://github.com/faisalkabir1/OrangeHrm-Automation-by-Playwright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^24.2.1"
+  }
+}
