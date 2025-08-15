@@ -1,20 +1,21 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
+const { LoginPage } = require('../pages/loginPage');
 
 test('Login to OrangeHRM with valid credentials', async ({ page }) => {
-  // Step 1: Go to login page
-  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+  const loginPage = new LoginPage(page);
 
-  // Step 2: Wait for username field and enter username
-  await page.fill('input[name="username"]', 'Admin');
+  // Validcredentials
+  const username = 'Admin';
+  const password = 'admin123';
 
-  // Step 3: Enter password
-  await page.fill('input[name="password"]', 'admin123');
+  // Go to login page
+  await loginPage.gotoLoginPage();
 
-  // Step 4: Click Login button
-  await page.click('button[type="submit"]');
+  // Perform login
+  await loginPage.login(username, password);
 
-  // Step 5: Assert that dashboard loaded
+  // Assertion
   await expect(page).toHaveURL(/dashboard/);
-  await expect(page.locator('h6')).toHaveText('Dashboard');
+  await expect(page.locator(loginPage.dashboardHeader)).toHaveText('Dashboard');
 });
