@@ -1,6 +1,6 @@
 // @ts-check
-const { test, expect } = require('@playwright/test');
-const { LoginPage } = require('../pages/loginPage');
+import { test, expect } from '@playwright/test';
+import LoginPage from '../pages/loginPage';
 
 test('Login to OrangeHRM with valid credentials', async ({ page }) => {
   const loginPage = new LoginPage(page);

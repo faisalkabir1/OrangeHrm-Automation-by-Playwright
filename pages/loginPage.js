@@ -1,4 +1,4 @@
-class LoginPage {
+export default class LoginPage {
   constructor(page) {
     this.page = page;
     this.usernameInput = 'input[name="username"]';
@@ -18,4 +18,3 @@ class LoginPage {
   }
 }
 
-module.exports = { LoginPage };
